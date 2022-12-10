@@ -6,7 +6,7 @@ from pprint import pprint
 
 FREQUENCY_DICT = {}
 COMBINATIONS = []
-MAXIMUM_CHARS = 7
+MAXIMUM_CHARS = 7 # NOTE:CHANGE THIS TO 8 IF eight character passwords are needed to be generated!
 KEYBOARD_DATA = {}
 
 def load_keyboard_data():
@@ -47,7 +47,7 @@ def eight_letter_combinations(graph,ip_char,folder_name):
                             for g in graph[f]:
                                 temp_str = ip_char + a + b + c + d+ e + f + g
                                 txt_file.write(temp_str+"\n")
-    print("Generated/8_combinations.txt!")
+    print("Generated/eight_combinations.txt!")
 
 
 def open_main_file(pwd_path,no_of_chars,folder_name):
@@ -57,8 +57,6 @@ def open_main_file(pwd_path,no_of_chars,folder_name):
     except:
         mkdir(folder_name)
         txt_file = open("Combinations starting with {0}/{1}_letter_combinations.txt".format(folder_name,MAXIMUM_CHARS-no_of_chars),'w')
-    # file = open(pwd_path,'rb')
-    
     with open(pwd_path,'r+') as f:
         lines = f.readlines()
         for i in lines:
