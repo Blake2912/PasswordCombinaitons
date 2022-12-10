@@ -1,6 +1,13 @@
 # Password Combination Generator
 
 This repository contains the program for generating keyboard combinations using keybaord walks and skipping characters.
+<h3>
+Method Adopted
+</h3>
+
+* In this project we are aiming to find the keyboard combinations and we are using two methods
+    * Generating Horizontal Key combinations with/without skips.
+    * Generating All Direction Key combinations without skips.
 
 <hr></hr>
 <h3>
@@ -55,6 +62,3 @@ python3 generate_random_combinations.py
     * If input is "ab" - all combinations starting with "a" and "b" will be generated.
     * If input is "a" - all combinations starting with "a" will be generated.
 * The output will be a folder generated storing the password combinations for the given input character ranging from 3 to 7/8 characters.
-
-
-
