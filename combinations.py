@@ -3,9 +3,14 @@ from lib2to3.pgen2 import driver
 from os import mkdir
 from pprint import pprint
 
+"""
+This code was the initial mockup of finding random 
+combinations for a given input array
+"""
 
 FREQUENCY_DICT = {}
 COMBINATIONS = []
+
 
 def load_keyboard_data():
     keyboard_json = open('adjacency.json')
