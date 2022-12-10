@@ -1,6 +1,11 @@
-## Password Combination Generator
+# Password Combination Generator
 
-This repository contains the program for generating keyboard combinations using walks and skipping characters.
+This repository contains the program for generating keyboard combinations using keybaord walks and skipping characters.
+
+<hr></hr>
+<h3>
+Setup and Execution Instructions
+</h3>
 
 * To generate <strong>horzontal and vertical</strong> combinations run the following command:
 ```
