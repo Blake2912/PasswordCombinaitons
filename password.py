@@ -28,7 +28,7 @@ def find_interstion_with_data():
             \nfile not found")
 
 
-def parse_list(ip_list,no_of_chars,skip_chars):
+def parse_list(ip_list,no_of_chars,skip_chars,file_name):
     global possible_password_list
     if skip_chars != 0:
             for i in range(0,len(ip_list)):
@@ -45,6 +45,7 @@ def parse_list(ip_list,no_of_chars,skip_chars):
                     counter += 1
                 if len(res_str) == no_of_chars:
                     possible_password_list.append(res_str)
+                    file_name.write(res_str+"\n")
                 
     else:
         for i in range(0,len(ip_list)):
@@ -59,6 +60,7 @@ def parse_list(ip_list,no_of_chars,skip_chars):
                 j += 1
                 counter += 1
             possible_password_list.append(res_str)
+            file_name.write(res_str+"\n")
 
 
 # Checking for only four args
@@ -84,7 +86,8 @@ else:
         horizontal_list = ['`','1','2','3','4','5','6','7','8','9','0','-','=','q',
         'w','e','r','t','y','u','i','o','p','[',']','\\','a','s','d','f','g','h','j',
         'k','l',';',"'",'z','x','c','v','b','n','m',',','.','/']
-        parse_list(horizontal_list,no_of_chars,skip_chars)
+        file = open("horizontal.txt","w")
+        parse_list(horizontal_list,no_of_chars,skip_chars,file)
         # find_combinations(horizontal_list)
         pprint(possible_password_list)
         print("Count: ",len(possible_password_list))
@@ -94,8 +97,8 @@ else:
         horizontal_shift_list = ['~','!','@','#','$','%','^','&','*','(',')','_',
         '+','Q','W','E','R','T','Y','U','I','O','P','{','}','|','A','S','D','F','G',
         'H','J','K','L',':','"','Z','X','C','V','B','N','M','<','>','?']
-
-        parse_list(horizontal_shift_list,no_of_chars,skip_chars)
+        file = open("horizontal_shift.txt","w")
+        parse_list(horizontal_shift_list,no_of_chars,skip_chars,file)
         pprint(possible_password_list)
         print("Count: ",len(possible_password_list))
 
@@ -105,8 +108,8 @@ else:
         vertical_list = ['`','1','q','a','z','2','w','s','x','3','e','d','c','4','r','f',
         'v','5','t','g','b','6','y','h','n','7','u','j','m','8','i','k',',','9','o','l','.','0','p',
         ';','/','-','[',"'",'=',']','\\']
-
-        parse_list(vertical_list,no_of_chars,skip_chars)
+        file = open("vertical.txt","w")
+        parse_list(vertical_list,no_of_chars,skip_chars,file)
         # find_combinations(vertical_list)
         pprint(possible_password_list)
         print("Count: ",len(possible_password_list))
@@ -117,7 +120,8 @@ else:
         vertical_shift_list = ['~','!','Q','A','Z','@','W','S','X','#','E','D','C','$','R','F','V',
         '%','T','G','B','^','Y','H','N','&','U','J','M','*','I','K','<','(','O','L','>',')','P',':',
         '?','_','{','"','+','}','|']
-        parse_list(vertical_shift_list,no_of_chars,skip_chars)
+        file = open("vertical_shift.txt","w")
+        parse_list(vertical_shift_list,no_of_chars,skip_chars,file)
         pprint(possible_password_list)
         print("Count: ",len(possible_password_list))
 
